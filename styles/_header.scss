@@ -4,6 +4,7 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    
 
     padding: 1.6rem 2.4rem 2.4rem 2rem;
 
@@ -36,7 +37,11 @@ header{
             top: 0;
             left: 0;
             right: 0;
+            z-index: 999;
             height: 100vh;
+            animation: fadeInAnimation ease-in-out .8s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
 
             .slide-menu{
                 background-color: $white;
@@ -80,6 +85,17 @@ header{
 
         .hidden{
             display: none;
+            animation: fadeInAnimation ease-in-out .8s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
     .cart-avatar-group{

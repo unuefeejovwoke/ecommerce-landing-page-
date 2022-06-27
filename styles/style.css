@@ -75,7 +75,14 @@ header .hamburger-logo-group .menu {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 999;
   height: 100vh;
+  -webkit-animation: fadeInAnimation ease-in-out .8s;
+          animation: fadeInAnimation ease-in-out .8s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 header .hamburger-logo-group .menu .slide-menu {
@@ -125,6 +132,30 @@ header .hamburger-logo-group .menu .slide-menu ul a:hover, header .hamburger-log
 
 header .hamburger-logo-group .hidden {
   display: none;
+  -webkit-animation: fadeInAnimation ease-in-out .8s;
+          animation: fadeInAnimation ease-in-out .8s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 header .cart-avatar-group {
@@ -190,11 +221,11 @@ header .cart-avatar-group .avatar:hover {
 }
 
 .lightbox .next {
-  right: 8.8%;
+  right: 8%;
 }
 
 .lightbox .next:hover {
-  right: 8%;
+  right: 6%;
 }
 
 .lightbox .arrow {
@@ -218,5 +249,79 @@ header .cart-avatar-group .avatar:hover {
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.product {
+  padding: 2.0rem 2.4rem;
+}
+
+.product .company-name {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff7d1a;
+  letter-spacing: 0.18rem;
+}
+
+.product .title {
+  color: #1d2025;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-top: 1.3rem;
+  line-height: 118%;
+}
+
+.product .description {
+  font-size: 1.5rem;
+  color: #68707d;
+  line-height: 165%;
+  margin-top: 1.6rem;
+}
+
+.product .place-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.product .place-wrapper .group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.product .place-wrapper .group .price {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.product .place-wrapper .group .discount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff7d1a;
+  background-color: #ffede0;
+  margin-left: 1.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.product .place-wrapper .old-price {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #b6bcc8;
+  text-decoration: line-through;
 }
 /*# sourceMappingURL=style.css.map */
