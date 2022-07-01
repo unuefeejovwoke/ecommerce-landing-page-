@@ -14,7 +14,7 @@
     }
 
     .next{
-        right: 6%;
+        right: 8%;
 
         &:hover{
             right: 6%;
@@ -39,4 +39,8 @@
 
         transition: all 0.3s ease;
     }
+}
+
+.thumb-gallery{
+    display: none;
 }

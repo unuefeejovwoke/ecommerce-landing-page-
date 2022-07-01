@@ -1,0 +1,35 @@
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 78%;
+    margin: 0 auto;
+  }
+  header .hamburger-logo-group {
+    gap: 5.4rem;
+  }
+  header .hamburger-logo-group .hamburger {
+    display: none;
+  }
+  header .hamburger-logo-group .menu {
+    display: block;
+    position: unset;
+    height: unset;
+  }
+  header .hamburger-logo-group .menu .slide-menu {
+    width: unset;
+    padding: 0;
+  }
+  header .hamburger-logo-group .menu .slide-menu img {
+    display: none;
+  }
+  header .hamburger-logo-group .menu .slide-menu ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    gap: 3.4rem;
+  }
+}
+/*# sourceMappingURL=media1440px.css.map */
