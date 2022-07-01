@@ -1,27 +1,29 @@
-.lightbox{
+.lightbox {
     position: relative;
 
-    .product-hero{
+    //margin-top: 1rem;
+
+    .product-hero {
         width: 100%;
     }
 
-    .previous{
+    .previous {
         left: 4%;
 
-        &:hover{
+        &:hover {
             left: 3%;
         }
     }
 
-    .next{
-        right: 8%;
+    .next {
+        right: 4%;
 
-        &:hover{
-            right: 6%;
+        &:hover {
+            right: 3%;
         }
     }
 
-    .arrow{
+    .arrow {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -39,8 +41,8 @@
 
         transition: all 0.3s ease;
     }
-}
 
-.thumb-gallery{
-    display: none;
+    .thumb-gallery {
+        display: none;
+    }
 }

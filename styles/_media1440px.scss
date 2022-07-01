@@ -1,34 +1,35 @@
-@media screen and (min-width: 1440px){
-    .container{
-        width: 78%;
+@media screen and (min-width: 1440px) {
+    .container {
+        width: 77%;
         margin: 0 auto;
     }
 
-    header{
+    header {
         padding: 0;
         border-bottom: 1px solid $grayish-blue;
 
-        .hamburger-logo-group{
+        .hamburger-logo-group {
             gap: 5.4rem;
 
-            .hamburger{
+            .hamburger {
                 display: none;
             }
 
-            .menu{
+            .menu {
                 display: block;
                 position: unset;
                 height: unset;
+                z-index: unset;
 
-                .slide-menu{
+                .slide-menu {
                     width: unset;
                     padding: 0;
 
-                    img{
+                    img {
                         display: none;
                     }
 
-                    ul{
+                    ul {
                         flex-direction: row;
                         margin: 0;
                         font-size: 1.5rem;
@@ -36,12 +37,12 @@
                         color: $dark-grayish-blue;
                         gap: 3.4rem;
 
-                        a{
+                        a {
                             display: block;
                             padding: 4rem 0;
                             border-bottom: 3px solid transparent;
 
-                            &:hover{
+                            &:hover {
                                 color: $very-dark-blue;
                                 text-decoration: none;
                                 font-weight: 700;
@@ -53,21 +54,21 @@
             }
         }
 
-        .cart-avatar-group{
+        .cart-avatar-group {
             gap: 4.5rem;
 
-            .avatar{
+            .avatar {
                 width: 5rem;
             }
         }
 
-        .cart{
+        .cart {
             right: -7rem;
             top: 90%;
         }
     }
 
-    .content{
+    .content {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -75,85 +76,86 @@
         padding: 9rem 5rem;
     }
 
-    .lightbox{
+    .lightbox {
         width: 100%;
 
-        .product-hero{
+        .product-hero {
             border-radius: 1.5rem;
         }
 
-        .previous, .next{
+        .previous, .next {
             display: none;
         }
 
-        .thumb-gallery{
+        .thumb-gallery {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-top: 3rem;
 
-            .pic{
+            .pic {
                 display: flex;
                 width: 20%;
                 height: fit-content;
                 overflow: hidden;
                 border-radius: 1rem;
+
+                img {
+                    width: 100%;
+
+                    &:hover {
+                        opacity: 0.75;
+                    }
+                }
             }
 
-            img{
-                width: 100%;
-
-                &:hover{
-                    opacity: 0.75;
+            .active {
+                border: 2px solid $orange;
+                img {
+                    opacity: 0.5;
                 }
             }
         }
-
-        .active{
-            border: 3px solid $orange;
-            
-        }
     }
 
-    .product{
+    .product {
         width: 100%;
         padding: 3rem 0 3rem 3rem;
 
-        .title{
+        .title {
             font-size: 4.4rem;
-            margin-top: 1.4rem;
+            margin-top: 1.8rem;
+            
         }
 
-        .description{
+        .description {
             margin-top: 3.5rem;
             font-size: 1.63rem;
         }
 
-        .place-wrapper{
+        .price-wrapper {
             flex-direction: column;
             align-items: flex-start;
             margin-top: 2.4rem;
             gap: 0.8rem;
         }
 
-        .count-btn-group{
+        .count-btn-group {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1.5rem;
             margin-top: 1.5rem;
 
-            .counter-wrapper{
+            .counter-wrapper {
                 width: 62%;
                 border-radius: 1rem;
                 padding: 1.2rem 0.5rem;
             }
 
-            .btn{
+            .btn {
                 width: 100%;
             }
         }
     }
 }
-
-

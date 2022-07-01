@@ -1,66 +1,82 @@
-header{
+header {
+    //border: 1px solid magenta; //temporary
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
 
     padding: 1.6rem 2.4rem 2.4rem 2rem;
 
     position: relative;
 
-    .hamburger-logo-group{
-        // border: 2px solid rgb(49, 110, 147);
+    /*position: fixed;
+    z-index: 1;
+    width: 100%;
+    background-color: $white;*/
+
+    .hamburger-logo-group {
+        //border: 1px solid blue;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         gap: 1.6rem;
 
-        .hamburger{
+        .hamburger {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 0.3rem;
 
             cursor: pointer;
 
-            .line{
+            .line {
                 background-color: $dark-grayish-blue;
                 width: 1.5rem;
                 height: 0.3rem;
             }
         }
 
-        .menu{
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        .menu {
             background-color: $black;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 999;
             height: 100vh;
+            z-index: 10;
             animation: fadeInAnimation ease-in-out .8s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
 
-            .slide-menu{
+            .slide-menu {
                 background-color: $white;
                 height: 100%;
                 width: 66vw;
 
                 padding: 2.3rem;
 
-                img{
+                img {
                     transition: transform 0.5s ease;
 
-                    &:hover{
+                    &:hover {
                         cursor: pointer;
                         transform: rotate(90deg);
                     }
                 }
 
-                ul{
+                ul {
                     margin-top: 5rem;
                     font-size: 1.8rem;
                     font-weight: 700;
@@ -71,47 +87,37 @@ header{
 
                     list-style: none;
 
-                    a, :active, :visited{
-                       color: $very-dark-blue;
-                       text-decoration: unset;
+                    a, :active, :visited {
+                        color: $very-dark-blue;
+                        text-decoration: unset;
 
-                       &:hover{
-                         text-decoration: underline;
-                         opacity: 0.75;
-                       }
+                        &:hover {
+                            text-decoration: underline;
+                            opacity: 0.75;
+                        }
                     }
                 }
             }
         }
 
-        .hidden{
+        .hidden {
             display: none;
-            animation: fadeInAnimation ease-in-out .8s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
         }
     }
-    @keyframes fadeInAnimation {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-    .cart-avatar-group{
-        // border: 2px solid rgb(56, 208, 89);
+
+    .cart-avatar-group {
+        //border: 1px solid green;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         gap: 2.2rem;
-        
-        .btncart{
-            cursor: pointer;
-            position:relative;
 
-            .cart-count{
+        .btnCart {
+            cursor: pointer;
+            position: relative;
+
+            .cart-count {
                 position: absolute;
                 top: -25%;
                 right: -25%;
@@ -127,70 +133,73 @@ header{
                 border-radius: 1rem;
             }
         }
-        .avatar{
-            width: 2.4rem;
+
+        .avatar {
+            width: 2.5rem;
             cursor: pointer;
             border: 2px solid transparent;
 
-            &:hover{
+            &:hover {
                 border: 2px solid $orange;
                 border-radius: 50%;
             }
         }
     }
 
-    .cart{
+    .cart {
+
         position: absolute;
         right: 1rem;
         top: calc(calc(100%) + 1rem);
-        width: 35.5rem;
+        width: 35.5rem; //1rem +35.5rem + 1rem => 375px
 
         z-index: 1;
         background-color: $white;
         border-radius: 1rem;
-        box-shadow: 0 1rem 1rem 1rem rgba(0,0,0,0.1), 0 1rem 2rem 1rem rgba(0,0,0,0.1);
+        box-shadow: 0 1rem 1rem 1rem rgba(0,0,0, 0.1), 0 1rem 2rem 1rem rgba(0,0,0, 0.1);
 
-        .cart-header{
+        .cart-header {
             border-bottom: 1px solid $grayish-blue;
             padding: 2.4rem 2rem;
             font-size: 1.6rem;
             font-weight: 700;
         }
 
-        .product-in-cart{
-            .item{
+        .products-in-cart {
+
+            .item {
                 margin: 2.4rem;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
 
-                .product-img{
+                .product-img {
                     width: 5rem;
                     border-radius: 0.5rem;
                 }
 
-                .details{
+                .details {
                     color: $dark-grayish-blue;
                     font-size: 1.6rem;
                     line-height: 2.6rem;
 
-                    .price-group{
+                    .price-group {
                         display: flex;
                         gap: 0.6rem;
 
-                        .total-amount{
+                        .total-amount {
                             font-weight: 700;
                             font-size: 1.7rem;
-                            color: $black;
+                            color: $black
                         }
                     }
                 }
 
-                #btnDelete{
+                #btnDelete {
                     padding: 0.5rem;
                     border-radius: 0.5rem;
 
-                    &:hover{
+                    &:hover {
                         cursor: pointer;
                         background-color: $pale-orange;
                     }
@@ -198,16 +207,16 @@ header{
             }
         }
 
-        .msg-empty{
+        .msg-empty {
             color: $dark-grayish-blue;
-            font-weight: 700;
             text-align: center;
             font-size: 1.6rem;
+            font-weight: 700;
 
             padding: 7.8rem 0;
         }
 
-        .checkbox{
+        .checkout {
             background-color: $orange;
             color: $white;
 
@@ -222,11 +231,12 @@ header{
             cursor: pointer;
         }
 
-        .hidden{
+        .hidden {
             display: none;
-        }  
+        }
     }
-    .hidden{
+
+    .hidden {
         display: none;
-    }  
+    }
 }

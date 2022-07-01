@@ -29,6 +29,10 @@ header {
           justify-content: space-between;
   padding: 1.6rem 2.4rem 2.4rem 2rem;
   position: relative;
+  /*position: fixed;
+    z-index: 1;
+    width: 100%;
+    background-color: $white;*/
 }
 
 header .hamburger-logo-group {
@@ -59,6 +63,9 @@ header .hamburger-logo-group .hamburger {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 0.3rem;
   cursor: pointer;
 }
@@ -69,14 +76,32 @@ header .hamburger-logo-group .hamburger .line {
   height: 0.3rem;
 }
 
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 header .hamburger-logo-group .menu {
   background-color: rgba(0, 0, 0, 0.75);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
   height: 100vh;
+  z-index: 10;
   -webkit-animation: fadeInAnimation ease-in-out .8s;
           animation: fadeInAnimation ease-in-out .8s;
   -webkit-animation-iteration-count: 1;
@@ -132,30 +157,6 @@ header .hamburger-logo-group .menu .slide-menu ul a:hover, header .hamburger-log
 
 header .hamburger-logo-group .hidden {
   display: none;
-  -webkit-animation: fadeInAnimation ease-in-out .8s;
-          animation: fadeInAnimation ease-in-out .8s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 header .cart-avatar-group {
@@ -166,21 +167,21 @@ header .cart-avatar-group {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 2.2rem;
 }
 
-header .cart-avatar-group .btncart {
+header .cart-avatar-group .btnCart {
   cursor: pointer;
   position: relative;
 }
 
-header .cart-avatar-group .btncart .cart-count {
+header .cart-avatar-group .btnCart .cart-count {
   position: absolute;
   top: -25%;
   right: -25%;
@@ -194,7 +195,7 @@ header .cart-avatar-group .btncart .cart-count {
 }
 
 header .cart-avatar-group .avatar {
-  width: 2.4rem;
+  width: 2.5rem;
   cursor: pointer;
   border: 2px solid transparent;
 }
@@ -223,7 +224,7 @@ header .cart .cart-header {
   font-weight: 700;
 }
 
-header .cart .product-in-cart .item {
+header .cart .products-in-cart .item {
   margin: 2.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -236,49 +237,49 @@ header .cart .product-in-cart .item {
           justify-content: space-between;
 }
 
-header .cart .product-in-cart .item .product-img {
+header .cart .products-in-cart .item .product-img {
   width: 5rem;
   border-radius: 0.5rem;
 }
 
-header .cart .product-in-cart .item .details {
+header .cart .products-in-cart .item .details {
   color: #68707d;
   font-size: 1.6rem;
   line-height: 2.6rem;
 }
 
-header .cart .product-in-cart .item .details .price-group {
+header .cart .products-in-cart .item .details .price-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 0.6rem;
 }
 
-header .cart .product-in-cart .item .details .price-group .total-amount {
+header .cart .products-in-cart .item .details .price-group .total-amount {
   font-weight: 700;
   font-size: 1.7rem;
   color: rgba(0, 0, 0, 0.75);
 }
 
-header .cart .product-in-cart .item #btnDelete {
+header .cart .products-in-cart .item #btnDelete {
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
 
-header .cart .product-in-cart .item #btnDelete:hover {
+header .cart .products-in-cart .item #btnDelete:hover {
   cursor: pointer;
   background-color: #ffede0;
 }
 
 header .cart .msg-empty {
   color: #68707d;
-  font-weight: 700;
   text-align: center;
   font-size: 1.6rem;
+  font-weight: 700;
   padding: 7.8rem 0;
 }
 
-header .cart .checkbox {
+header .cart .checkout {
   background-color: #ff7d1a;
   color: white;
   text-align: center;
@@ -315,11 +316,11 @@ header .hidden {
 }
 
 .lightbox .next {
-  right: 8%;
+  right: 4%;
 }
 
 .lightbox .next:hover {
-  right: 6%;
+  right: 3%;
 }
 
 .lightbox .arrow {
@@ -345,7 +346,7 @@ header .hidden {
   transition: all 0.3s ease;
 }
 
-.thumb-gallery {
+.lightbox .thumb-gallery {
   display: none;
 }
 
@@ -376,7 +377,7 @@ header .hidden {
   margin-top: 1.6rem;
 }
 
-.product .place-wrapper {
+.product .price-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,7 +390,7 @@ header .hidden {
   margin-top: 2rem;
 }
 
-.product .place-wrapper .group {
+.product .price-wrapper .group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -401,12 +402,12 @@ header .hidden {
           justify-content: flex-start;
 }
 
-.product .place-wrapper .group .price {
+.product .price-wrapper .group .price {
   font-size: 3rem;
   font-weight: 700;
 }
 
-.product .place-wrapper .group .discount {
+.product .price-wrapper .group .discount {
   font-size: 1.5rem;
   font-weight: 700;
   color: #ff7d1a;
@@ -416,7 +417,7 @@ header .hidden {
   border-radius: 0.5rem;
 }
 
-.product .place-wrapper .old-price {
+.product .price-wrapper .old-price {
   font-size: 1.7rem;
   font-weight: 700;
   color: #b6bcc8;
@@ -473,8 +474,8 @@ header .hidden {
   font-weight: 700;
   border-radius: 1rem;
   padding: 1.9rem;
-  -webkit-box-shadow: 0 20px 30px 0px #ffede0;
-          box-shadow: 0 20px 30px 0px #ffede0;
+  -webkit-box-shadow: 0px 20px 30px 0px #ffede0;
+          box-shadow: 0px 20px 30px 0px #ffede0;
   cursor: pointer;
 }
 
@@ -486,7 +487,7 @@ header .hidden {
 
 @media screen and (min-width: 1440px) {
   .container {
-    width: 78%;
+    width: 77%;
     margin: 0 auto;
   }
   header {
@@ -503,6 +504,7 @@ header .hidden {
     display: block;
     position: unset;
     height: unset;
+    z-index: unset;
   }
   header .hamburger-logo-group .menu .slide-menu {
     width: unset;
@@ -588,14 +590,17 @@ header .hidden {
     overflow: hidden;
     border-radius: 1rem;
   }
-  .lightbox .thumb-gallery img {
+  .lightbox .thumb-gallery .pic img {
     width: 100%;
   }
-  .lightbox .thumb-gallery img:hover {
+  .lightbox .thumb-gallery .pic img:hover {
     opacity: 0.75;
   }
-  .lightbox .active {
-    border: 3px solid #ff7d1a;
+  .lightbox .thumb-gallery .active {
+    border: 2px solid #ff7d1a;
+  }
+  .lightbox .thumb-gallery .active img {
+    opacity: 0.5;
   }
   .product {
     width: 100%;
@@ -603,13 +608,13 @@ header .hidden {
   }
   .product .title {
     font-size: 4.4rem;
-    margin-top: 1.4rem;
+    margin-top: 1.8rem;
   }
   .product .description {
     margin-top: 3.5rem;
     font-size: 1.63rem;
   }
-  .product .place-wrapper {
+  .product .price-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -641,5 +646,69 @@ header .hidden {
   .product .count-btn-group .btn {
     width: 100%;
   }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.overlay .btnClose {
+  width: 57rem;
+  text-align: end;
+  padding: 2rem 0;
+}
+
+.overlay .btnClose img {
+  cursor: pointer;
+  -webkit-filter: brightness(300%);
+          filter: brightness(300%);
+}
+
+.overlay .lightbox {
+  max-width: 57rem;
+}
+
+.overlay .lightbox .next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  right: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.overlay .lightbox .previous {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.overlay .lightbox .arrow {
+  top: 40%;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
